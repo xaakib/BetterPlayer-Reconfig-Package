@@ -1,9 +1,0 @@
-# This is a generated file; do not edit or check into version control.
-better_player=/Users/developer/Desktop/BetterPlayer-Reconfig-Package/
-path_provider=/Users/developer/Documents/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.6/
-path_provider_linux=/Users/developer/Documents/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.0/
-path_provider_macos=/Users/developer/Documents/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.2/
-path_provider_windows=/Users/developer/Documents/src/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.3/
-wakelock=/Users/developer/Documents/src/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.5.6/
-wakelock_macos=/Users/developer/Documents/src/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock_macos-0.4.0/
-wakelock_web=/Users/developer/Documents/src/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock_web-0.4.0/
