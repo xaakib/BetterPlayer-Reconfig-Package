@@ -66,7 +66,7 @@ class _BetterPlayerCupertinoControlsState
       isVisibilityBack = !isVisibilityBack;
     });
     getstatecheBackTImer = Timer(Duration(seconds: 1), () {
-      print("Future delayed runing Back");
+      print("Future delayeD runing Back");
       setState(() {
         print("Future delayed runing  Back");
         isVisibilityBack = !isVisibilityBack;
@@ -280,39 +280,19 @@ class _BetterPlayerCupertinoControlsState
     );
   }
 
-  GestureDetector _buildExpandButton(
-    Color backgroundColor,
-    Color iconColor,
-    double barHeight,
-    double iconSize,
-    double buttonPadding,
-  ) {
-    return GestureDetector(
-      onTap: _onExpandCollapse,
-      child: AnimatedOpacity(
+  int count = 0;
+
+  Widget _buildExpandButton() {
+    return AnimatedOpacity(
         opacity: _hideStuff ? 0.0 : 1.0,
         duration: _controlsConfiguration.controlsHideTime,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            height: barHeight,
-            padding: EdgeInsets.symmetric(
-              horizontal: buttonPadding,
-            ),
-            decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
-            child: Center(
-              child: Icon(
-                _betterPlayerController!.isFullScreen
-                    ? _controlsConfiguration.fullscreenDisableIcon
-                    : _controlsConfiguration.fullscreenEnableIcon,
-                color: iconColor,
-                size: iconSize,
-              ),
-            ),
+        child: IconButton(
+          onPressed: () => Navigator.of(context).popUntil((_) => count++ >= 2),
+          icon: Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Colors.white,
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   Expanded _buildHitArea() {
@@ -594,13 +574,7 @@ class _BetterPlayerCupertinoControlsState
       child: Row(
         children: <Widget>[
           if (_controlsConfiguration.enableFullscreen)
-            _buildExpandButton(
-              backgroundColor,
-              iconColor,
-              barHeight,
-              iconSize,
-              buttonPadding,
-            )
+            _buildExpandButton()
           else
             const SizedBox(),
           const SizedBox(
